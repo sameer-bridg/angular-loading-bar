@@ -60,6 +60,10 @@ angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
         reqsTotal = 0;
       }
 
+      $rootScope.$on('cfpLoadingBar:setComplete', function () {
+        setComplete();
+      });
+
       /**
        * Determine if the response has already been cached
        * @param  {Object}  config the config option from the request
